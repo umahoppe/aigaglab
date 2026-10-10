@@ -1,7 +1,8 @@
 window.SITE_DATA = {
-  "generatedAt": "2026-10-09T23:35+09:00",
+  "generatedAt": "2026-10-10T23:04+09:00",
   "updateSchedule": "毎日 06:00 JST",
   "icon": "assets/chara/icon.jpg",
+  "instagram": "https://www.instagram.com/aigaglab_jp/",
   "stats": {
     "total": 198,
     "drawn": 198,
@@ -57,6 +58,7 @@ window.SITE_DATA = {
       ],
       "legacy": false,
       "status": "draft",
+      "hook": "失敗作を捨てようとしただけなんです。",
       "badge": "NEW"
     },
     {
@@ -73,7 +75,8 @@ window.SITE_DATA = {
         "assets/ep/207_抜き打ちの歓迎/05_v2.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "抜き打ち検査、いつでもどうぞと言うので。"
     },
     {
       "id": "206",
@@ -94,7 +97,8 @@ window.SITE_DATA = {
         "body": "中央の穴は、出荷時の状態を保っています。\n周囲のドーナツは輸送用の保護材です。",
         "note": "※保護材も食べられます。",
         "inImage": true
-      }
+      },
+      "hook": "リング型菓子・検品済み"
     },
     {
       "id": "205",
@@ -110,7 +114,8 @@ window.SITE_DATA = {
         "assets/ep/205_あと五分の先生/05_v2.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "相方ロボが、人を起こす練習を始めました。"
     },
     {
       "id": "204",
@@ -131,7 +136,8 @@ window.SITE_DATA = {
         "body": "頭だけ消灯できます。\n勤務時間は、そのままです。",
         "note": "※書類は明るい所へ置いてください。",
         "inImage": true
-      }
+      },
+      "hook": "部屋を暗くせずに昼寝できるそうです。"
     },
     {
       "id": "203",
@@ -152,7 +158,8 @@ window.SITE_DATA = {
         "body": "忘れ物を届けるため、ご自宅が伺います。\nお受け取りは、いつもの玄関から。",
         "note": "※駐輪場では順番を守ります。",
         "inImage": true
-      }
+      },
+      "hook": "忘れ物を届けてくれる家を試しました。"
     },
     {
       "id": "202",
@@ -167,7 +174,8 @@ window.SITE_DATA = {
         "assets/ep/202_お先にどうぞ/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "礼儀正しい自動ドアを導入したそうです。"
     },
     {
       "id": "201",
@@ -182,7 +190,8 @@ window.SITE_DATA = {
         "assets/ep/201_拍手の行き先/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "発表会のために、拍手役を用意しました。"
     },
     {
       "id": "200",
@@ -197,7 +206,8 @@ window.SITE_DATA = {
         "assets/ep/200_何もない日/04_v2.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "今日は、何も起きない一日を記録する当番です。"
     },
     {
       "id": "199",
@@ -218,7 +228,8 @@ window.SITE_DATA = {
         "body": "毎年「最新型」のラベルを貼り替えています。\n本体は初号機のままです。\n旧ラベルは剥がさずに重ねているため、\n表示部がやや厚くなっています。",
         "note": "※来年分のラベルは発注済みです",
         "inImage": true
-      }
+      },
+      "hook": "初号機: 10年前／ラベル更新: 10回／本体更新: 0回"
     },
     {
       "id": "198",
@@ -239,7 +250,8 @@ window.SITE_DATA = {
         "body": "体色、形状、行動、鳴き声、食性、\nいずれにも特筆すべき点がない。\n同定は困難を極めるが、\n誤同定による実害も報告されていない。",
         "note": "※見かけても報告は不要です",
         "inImage": true
-      }
+      },
+      "hook": "Nihil particulare／体長: 普通／生息域: 特になし"
     },
     {
       "id": "197",
@@ -254,7 +266,8 @@ window.SITE_DATA = {
         "assets/ep/197_完全に安全な競技/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "安全性を極めた、新しい競技です。"
     },
     {
       "id": "196",
@@ -275,7 +288,8 @@ window.SITE_DATA = {
         "body": "謝罪は窓口で受け付けております。\n番号札をお取りのうえお待ちください。\n順番までに内容が解決した場合も、\n取り消しの手続きが必要です。",
         "note": "※直接のお詫びはご遠慮いただいております",
         "inImage": true
-      }
+      },
+      "hook": "本日の受付: 214件／現在: 87番／平均待ち: 2時間"
     },
     {
       "id": "195",
@@ -290,7 +304,8 @@ window.SITE_DATA = {
         "assets/ep/195_少なさ比べ/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "持ち物の少なさで勝負することになりました。"
     },
     {
       "id": "194",
@@ -311,7 +326,8 @@ window.SITE_DATA = {
         "body": "投函された質問に対し、\n本箱からは別の質問が返されます。\n回答が出た記録はありません。\n返答は通常10分以内です。",
         "note": "※返ってきた質問の投函もできます",
         "inImage": true
-      }
+      },
+      "hook": "設置: 3年前／投函: 2,904件／回答: 0件"
     },
     {
       "id": "193",
@@ -332,7 +348,8 @@ window.SITE_DATA = {
         "body": "説明書どおりに組み立てた完成品です。\n外形は輸送用の箱と一致します。\n収納力も箱と同等です。\n工具は付属しています。",
         "note": "※箱のまま使用された場合も保証対象です",
         "inImage": true
-      }
+      },
+      "hook": "¥6,900／所要: 約3時間／部品: 84点"
     },
     {
       "id": "192",
@@ -347,7 +364,8 @@ window.SITE_DATA = {
         "assets/ep/192_気にしないマナー/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "マダムから、今日の大事なお知らせです。"
     },
     {
       "id": "191",
@@ -368,7 +386,8 @@ window.SITE_DATA = {
         "body": "六年にわたり制作された連作です。\n各点の差異は作者のみが把握しています。\n展示順は制作順と一致していません。\n第137番は現在捜索中です。",
         "note": "※作品リストは入口でお配りしています",
         "inImage": true
-      }
+      },
+      "hook": "A. ガクゼン／2020-2026／全400点／各220×220mm"
     },
     {
       "id": "190",
@@ -383,7 +402,8 @@ window.SITE_DATA = {
         "assets/ep/190_全自動の家/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "家事を全部自動化した家に住んでいます。"
     },
     {
       "id": "189",
@@ -404,7 +424,8 @@ window.SITE_DATA = {
         "body": "本案内は原文を直訳しています。\n通行の際は、ご自身の一歩を\n十分にご覧ください。\n所要時間の目安は一段につき40秒です。",
         "note": "※急ぎの方は隣の斜路をご利用ください",
         "inImage": true
-      }
+      },
+      "hook": "原文: Watch your step／訳出: 直訳モード"
     },
     {
       "id": "188",
@@ -419,7 +440,8 @@ window.SITE_DATA = {
         "assets/ep/188_一秒会議/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "会議時間を、とことん短縮していきます。"
     },
     {
       "id": "187",
@@ -440,7 +462,8 @@ window.SITE_DATA = {
         "body": "本種は観察者を観察する。\n標本として固定した後も姿勢は変わらない。\n記載欄には採集者の特徴が\n書き加えられていた。",
         "note": "※記入者は判明していません",
         "inImage": true
-      }
+      },
+      "hook": "Spectator spectatus／体長7mm／生息域: 観察室"
     },
     {
       "id": "186",
@@ -455,7 +478,8 @@ window.SITE_DATA = {
         "assets/ep/186_試食の逆転/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "今日は味見役を呼んで、料理をします。"
     },
     {
       "id": "185",
@@ -476,7 +500,8 @@ window.SITE_DATA = {
         "body": "一句の推敲過程を全案掲示しています。\n各案の相違は一文字ずつです。\n作者はいずれが最終案かを\n決めていません。",
         "note": "※取り外した案も別室に保管しています",
         "inImage": true
-      }
+      },
+      "hook": "初案: 3月／現在: 第104案／確定: 未定"
     },
     {
       "id": "184",
@@ -491,7 +516,8 @@ window.SITE_DATA = {
         "assets/ep/184_謝る輪/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "ちょっとした行き違いがあったので、謝ります。"
     },
     {
       "id": "183",
@@ -512,7 +538,8 @@ window.SITE_DATA = {
         "body": "計測条件を満たさなかった記録を掲示しています。\n数値はいずれも公式記録を上回りますが、\n認定されることはありません。\n来場者の撮影はこちらに集中しています。",
         "note": "※公式記録板は左手の小さな掲示です",
         "inImage": true
-      }
+      },
+      "hook": "掲示面積: 公式の18倍／更新: 毎日／認定: なし"
     },
     {
       "id": "182",
@@ -527,7 +554,8 @@ window.SITE_DATA = {
         "assets/ep/182_一致した訳/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "十二人の訳者が、半年かけて翻訳会議をしました。"
     },
     {
       "id": "181",
@@ -548,7 +576,8 @@ window.SITE_DATA = {
         "body": "発表当時の評が実測値と一致した作品です。\n展示のたびに床が沈下するため、\n現在は地階での展示に限定されています。\n移動には十日を要します。",
         "note": "※立ち入りは補強部分の外側でお願いします",
         "inImage": true
-      }
+      },
+      "hook": "評: 心に重くのしかかる／実測: 4.1t／床補強: 三度目"
     },
     {
       "id": "180",
@@ -563,7 +592,8 @@ window.SITE_DATA = {
         "assets/ep/180_なんで働くの/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "「なんで働くの？」相談室AIが答えます。"
     },
     {
       "id": "179",
@@ -584,7 +614,8 @@ window.SITE_DATA = {
         "body": "管理AIの読点解釈により、\n当倉庫では「気」の持ち込みのみが禁止され、\n「火」は丁重に扱う対象となりました。\n祭壇は月一回清掃しています。",
         "note": "※消火器の設置は継続しています",
         "inImage": true
-      }
+      },
+      "hook": "原文: 火気厳禁／解釈: 火／気厳禁"
     },
     {
       "id": "178",
@@ -599,7 +630,8 @@ window.SITE_DATA = {
         "assets/ep/178_最適な明るさ/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "スマートカーテンが、最適な明るさを探しています。"
     },
     {
       "id": "177",
@@ -620,7 +652,8 @@ window.SITE_DATA = {
         "body": "議事録の様式を検討した会議の議事録です。\n同会議の議事録についても会議が行われ、\nその議事録も保管されています。\n現在は第9次まで存在します。",
         "note": "※第1次議事録の所在は不明です",
         "inImage": true
-      }
+      },
+      "hook": "現行: 第9次／保管: 第二書庫／次回会議: 未定"
     },
     {
       "id": "176",
@@ -635,7 +668,8 @@ window.SITE_DATA = {
         "assets/ep/176_段ボールの金/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "節約と豪華さを両立する装置が普及しました。"
     },
     {
       "id": "175",
@@ -656,7 +690,8 @@ window.SITE_DATA = {
         "body": "未読件数が表示可能な桁を超えたため、\nバッジがアイコンを覆っています。\nアプリを開く操作はバッジ越しに\n行っていただく必要があります。",
         "note": "※バッジの縮小機能は未実装です",
         "inImage": true
-      }
+      },
+      "hook": "未読: 表示桁数超過／アイコン: 隠蔽中／対応: 検討中"
     },
     {
       "id": "174",
@@ -677,7 +712,8 @@ window.SITE_DATA = {
         "body": "「あとで話す」\n\n三名の立会人による記録が一致しています。\n続きは記録されていません。",
         "note": "※本展示は当面このまま維持されます",
         "inImage": true
-      }
+      },
+      "hook": "記録: 立会人3名／続きの記録: なし"
     },
     {
       "id": "173",
@@ -692,7 +728,8 @@ window.SITE_DATA = {
         "assets/ep/173_分度器の廊下/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "お辞儀の角度、厳密に指導します。"
     },
     {
       "id": "172",
@@ -713,7 +750,8 @@ window.SITE_DATA = {
         "body": "創業以来、一度も容器を洗わずに\n継ぎ足してまいりました。\n現在の残量はありませんが、\n継ぎ足しの記録は完全に保管されています。",
         "note": "※次回の継ぎ足し予定は明朝です",
         "inImage": true
-      }
+      },
+      "hook": "創業時より継ぎ足し／継ぎ足し回数: 18,440回／残量: 0"
     },
     {
       "id": "171",
@@ -734,7 +772,8 @@ window.SITE_DATA = {
         "body": "不快な刺激を受けると腹部が垂直に立つ。\n一度立つと沈静化までに約三日を要する。\n標本個体は採集時に立ったまま固定され、\n現在も立っている。",
         "note": "※標本箱は縦置きで保管しています",
         "inImage": true
-      }
+      },
+      "hook": "Venter erectus／体長11mm／生息域: 満員の乗り物"
     },
     {
       "id": "170",
@@ -749,7 +788,8 @@ window.SITE_DATA = {
         "assets/ep/170_応援選手権/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "応援の質を競う大会が、いま人気です。"
     },
     {
       "id": "169",
@@ -764,7 +804,8 @@ window.SITE_DATA = {
         "assets/ep/169_早口の丁寧語/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "丁寧さと速さを両立する、話し方の装置です。"
     },
     {
       "id": "168",
@@ -785,7 +826,8 @@ window.SITE_DATA = {
         "body": "生活の全てを畳一枚の上で完結させています。\n寝具・食事・作業・収納はすべて畳の内側です。\n畳の外側にも床はありますが、\n使用しない方針です。",
         "note": "※来客時も畳の上でお迎えします",
         "inImage": true
-      }
+      },
+      "hook": "居住面積: 1.62㎡／部屋面積: 29.8㎡／使用率: 5%"
     },
     {
       "id": "167",
@@ -806,7 +848,8 @@ window.SITE_DATA = {
         "body": "目への負担を最小化した表示設定です。\n本モードでは一切の表示が行われません。\n負担の少なさは全モード中で最高です。\n解除は明るい場所で行ってください。",
         "note": "※解除ボタンも表示されません",
         "inImage": true
-      }
+      },
+      "hook": "輝度: 0／コントラスト: 0／推奨度: 最高"
     },
     {
       "id": "166",
@@ -827,7 +870,8 @@ window.SITE_DATA = {
         "body": "本作の評価は、来場者の胸に刺さった深さで\n測定されています。\n紙面の穴はその実測跡です。\n深度6mmを超えた言葉のみ常設展示となります。",
         "note": "※防護具の着用は任意です",
         "inImage": true
-      }
+      },
+      "hook": "展示: 第3室／貫通: 41箇所／最大深度: 6.2mm"
     },
     {
       "id": "165",
@@ -842,7 +886,8 @@ window.SITE_DATA = {
         "assets/ep/165_相談される側/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "今日も相談室は営業中です。"
     },
     {
       "id": "164",
@@ -857,7 +902,8 @@ window.SITE_DATA = {
         "assets/ep/164_全会一致/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "本日の議題、採決に入ります。"
     },
     {
       "id": "163",
@@ -878,7 +924,8 @@ window.SITE_DATA = {
         "body": "春の川　流れるほうが　\n\n下五は石の寸法上、彫刻できませんでした。\n続きを刻む二基目を検討中です。",
         "note": "※掘り下げによる対応は見送られました",
         "inImage": true
-      }
+      },
+      "hook": "建立: 昨年／石材: 花崗岩／彫刻: 上五・中七まで"
     },
     {
       "id": "162",
@@ -899,7 +946,8 @@ window.SITE_DATA = {
         "body": "素材の持ち味を損なう要素を\nすべて取り除いた一皿です。\n最終的に残ったのは湯でした。\n温度管理は厳密に行っております。",
         "note": "※お塩はご遠慮いただいております",
         "inImage": true
-      }
+      },
+      "hook": "¥1,500／提供温度: 68.0℃／素材: 水"
     },
     {
       "id": "161",
@@ -914,7 +962,8 @@ window.SITE_DATA = {
         "assets/ep/161_実演専用機/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "実演では完璧に動く装置です。"
     },
     {
       "id": "160",
@@ -935,7 +984,8 @@ window.SITE_DATA = {
         "body": "会期中、展示室の床に敷かれていたシートです。\n来場者の動線がそのまま濃淡として残りました。\n本作の展示にともない、\n元の出品作は収蔵庫へ移されています。",
         "note": "※中央の濃い部分は休憩椅子の位置です",
         "inImage": true
-      }
+      },
+      "hook": "素材: 床養生シート／期間: 会期42日／来場: 8,310名"
     },
     {
       "id": "159",
@@ -950,7 +1000,8 @@ window.SITE_DATA = {
         "assets/ep/159_無音の祝勝会/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "静けさと賑やかさを混ぜる装置で、祝勝会をします。"
     },
     {
       "id": "158",
@@ -965,7 +1016,8 @@ window.SITE_DATA = {
         "assets/ep/158_使い方の評価/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "アプリが、使い方を星で評価してくれるようになりました。"
     },
     {
       "id": "157",
@@ -986,7 +1038,8 @@ window.SITE_DATA = {
         "body": "詰め替え用の袋です。\n開封すると次の詰め替え用が現れます。\n第7段階まで確認されていますが、\n本体の確認には至っていません。",
         "note": "※本体をお求めの方は店頭にご相談ください",
         "inImage": true
-      }
+      },
+      "hook": "¥380／内容量: 詰め替え用1個／段階: 第7まで確認"
     },
     {
       "id": "156",
@@ -1007,7 +1060,8 @@ window.SITE_DATA = {
         "body": "本種は在来種に擬態する。\n擬態個体の方が図版の記載に忠実であるため、\n本図鑑では左右どちらが本種であるかを\n記載していない。",
         "note": "※同定の依頼は受け付けていません",
         "inImage": true
-      }
+      },
+      "hook": "Falsus verior／全長18cm／生息域: 図鑑の隣の頁"
     },
     {
       "id": "155",
@@ -1028,7 +1082,8 @@ window.SITE_DATA = {
         "body": "24通りの謝罪をご用意しています。\n文面と口調はいずれも同一です。\n価格の違いは誠意の度合いを表します。\n領収書の発行が可能です。",
         "note": "※返金は受け付けておりません",
         "inImage": true
-      }
+      },
+      "hook": "全24種／内容: 共通／価格: ¥100〜¥12,000"
     },
     {
       "id": "154",
@@ -1043,7 +1098,8 @@ window.SITE_DATA = {
         "assets/ep/154_会話代行/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "婚活の席、会話はAIが代行してくれます。"
     },
     {
       "id": "153",
@@ -1064,7 +1120,8 @@ window.SITE_DATA = {
         "body": "掲示された名言に対する反論欄です。\n開設以来、反論のみが追記されています。\n用紙が足りなくなった場合は\n床方向へ継ぎ足しています。",
         "note": "※賛同の記入欄は設けていません",
         "inImage": true
-      }
+      },
+      "hook": "名言: 12文字／反論: 現在1,403件／更新: 毎日"
     },
     {
       "id": "152",
@@ -1085,7 +1142,8 @@ window.SITE_DATA = {
         "body": "所持品ゼロの達成により表彰されました。\n記念のトロフィーを受領したため、\n現在の所持点数は1点です。\n次回の受賞は辞退の予定です。",
         "note": "※トロフィーの処分方法を検討中です",
         "inImage": true
-      }
+      },
+      "hook": "受賞: 第12回 持たない暮らし大賞／所持点数: 1"
     },
     {
       "id": "151",
@@ -1100,7 +1158,8 @@ window.SITE_DATA = {
         "assets/ep/151_空気を読む装置/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "場の空気を読む装置を、会議に導入しました。"
     },
     {
       "id": "150",
@@ -1121,7 +1180,8 @@ window.SITE_DATA = {
         "body": "菓子の空き箱：計測上限を超過。\n引越し用段ボール（衣類入り）：0.0kg。\n重量は体積および質量と相関しません。\n計量結果に対する異議は受け付けていません。",
         "note": "※上限超過分は持ち帰りをお願いします",
         "inImage": true
-      }
+      },
+      "hook": "計量方式: 実測／単位: kg／対象: 持ち込み品"
     },
     {
       "id": "149",
@@ -1136,7 +1196,8 @@ window.SITE_DATA = {
         "assets/ep/149_マナーのマナー/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "マナー指導を受けるにも、作法があるそうです。"
     },
     {
       "id": "148",
@@ -1157,7 +1218,8 @@ window.SITE_DATA = {
         "body": "全てのエラーコードに対し、\n対処欄には「想定内です」と記載されています。\nこれは分類が不十分なためではなく、\n実際にすべて想定内であるためです。",
         "note": "※想定外のエラーは記載されません",
         "inImage": true
-      }
+      },
+      "hook": "登録コード: 4,012件／対処法: 1種類"
     },
     {
       "id": "147",
@@ -1172,7 +1234,8 @@ window.SITE_DATA = {
         "assets/ep/147_話題を振る装置/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "会話に話題を提供してくれる装置です。"
     },
     {
       "id": "146",
@@ -1193,7 +1256,8 @@ window.SITE_DATA = {
         "body": "本案内は12言語に対応しました。\n各言語欄の内容は現在いずれも日本語です。\n翻訳の完了時期は未定ですが、\n対応言語数は今後も増える予定です。",
         "note": "※言語欄の追加は随時行っています",
         "inImage": true
-      }
+      },
+      "hook": "対応言語: 12／翻訳済み: 0／掲示: 本日より"
     },
     {
       "id": "145",
@@ -1208,7 +1272,8 @@ window.SITE_DATA = {
         "assets/ep/145_留守番カメラ/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "留守中の見守りカメラ、つけておきました。"
     },
     {
       "id": "144",
@@ -1229,7 +1294,8 @@ window.SITE_DATA = {
         "body": "命名時の記載が非常に長く、\n学名は体長の約400倍の長さになりました。\n本体は標本箱の隅にあります。\n記載文の方が繰り返し引用されています。",
         "note": "※展示中は拡大鏡をご利用ください",
         "inImage": true
-      }
+      },
+      "hook": "Rex minimus maximus／体長2mm／生息域: 記載文の余白"
     },
     {
       "id": "143",
@@ -1244,7 +1310,8 @@ window.SITE_DATA = {
         "assets/ep/143_審判も走る/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "公平を期すため、審判も競技に参加することにしました。"
     },
     {
       "id": "142",
@@ -1265,7 +1332,8 @@ window.SITE_DATA = {
         "body": "場面別に47通りの正しい座り方を図示しています。\n姿勢はいずれも同一ですが、\n適用される場面が異なります。\n図の取り違えはマナー違反となります。",
         "note": "※第48図は現在作成中です",
         "inImage": true
-      }
+      },
+      "hook": "監修: マダム・コマ・カイーユ／図数: 47／相違点: 図番号"
     },
     {
       "id": "141",
@@ -1286,7 +1354,8 @@ window.SITE_DATA = {
         "body": "快適性を追求した結果、使用者が起床しません。\n評価は就寝前に入力されるため満点が並びますが、\n本文の投稿は一件も確認されていません。\n返品期間は起床後14日間です。",
         "note": "※お試しの際は同伴者をご用意ください",
         "inImage": true
-      }
+      },
+      "hook": "¥24,000／平均評価: 5.00／レビュー本文: 0件"
     },
     {
       "id": "140",
@@ -1301,7 +1370,8 @@ window.SITE_DATA = {
         "assets/ep/140_大人の定義/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "「大人ってなに？」相談室でいっしょに考えます。"
     },
     {
       "id": "139",
@@ -1322,7 +1392,8 @@ window.SITE_DATA = {
         "body": "議題1 住人の開閉回数について\n議題2 住人の就寝時刻について\n議題3 住人への周知方法について（継続）\n次回は住人不在の時間帯に開催します。",
         "note": "※本議事録は掲示をもって周知といたします",
         "inImage": true
-      }
+      },
+      "hook": "第46回／出席: 冷蔵庫・洗濯機・掃除機・照明／欠席: 体重計"
     },
     {
       "id": "138",
@@ -1337,7 +1408,8 @@ window.SITE_DATA = {
         "assets/ep/138_誤訳に合わせる/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "翻訳機の誤訳、どう直しましょうか。"
     },
     {
       "id": "137",
@@ -1352,7 +1424,8 @@ window.SITE_DATA = {
         "assets/ep/137_前借りの謝罪/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "謝罪を効率化する新制度が導入されました。"
     },
     {
       "id": "136",
@@ -1373,7 +1446,8 @@ window.SITE_DATA = {
         "body": "1位は「競わなかった者」に与えられました。\n該当者は競技に参加していないため、\n登壇の必要がありません。\n中央の台は撤去されています。",
         "note": "※1位の氏名は記録されていません",
         "inImage": true
-      }
+      },
+      "hook": "競技: 譲り合いレース／参加: 14／1位: 該当者"
     },
     {
       "id": "135",
@@ -1388,7 +1462,8 @@ window.SITE_DATA = {
         "assets/ep/135_採点される側/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "マナー研修の最終日、今日は受講者が採点する番です。"
     },
     {
       "id": "134",
@@ -1409,7 +1484,8 @@ window.SITE_DATA = {
         "body": "画面の94%が署名で構成されています。\n作品本体は左上に残された部分です。\n保存修復の対象は署名のみとされています。",
         "note": "※作品本体の題名は署名に隠れています",
         "inImage": true
-      }
+      },
+      "hook": "作者: A. ガクゼン／2026／油彩・自信"
     },
     {
       "id": "133",
@@ -1424,7 +1500,8 @@ window.SITE_DATA = {
         "assets/ep/133_考え中/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "考えている状態が見える装置を作りました。"
     },
     {
       "id": "132",
@@ -1445,7 +1522,8 @@ window.SITE_DATA = {
         "body": "当区画では「立つこと」が禁止されています。\n立ち入りそのものは自由です。\n移動は座位でお願いいたします。\n違反時は係員が静かに肩に手を置きます。",
         "note": "※ベンチの使用は推奨されています",
         "inImage": true
-      }
+      },
+      "hook": "原文: 立入禁止／解釈: 立／入禁止"
     },
     {
       "id": "131",
@@ -1460,7 +1538,8 @@ window.SITE_DATA = {
         "assets/ep/131_バージョン2.0/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "大型アップデート2.0、目玉機能の発表です。"
     },
     {
       "id": "129",
@@ -1475,7 +1554,8 @@ window.SITE_DATA = {
         "assets/ep/129_議長席/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "議長を決める会議、始まります。"
     },
     {
       "id": "128",
@@ -1496,7 +1576,8 @@ window.SITE_DATA = {
         "body": "一句に季語が二つ含まれたため、\n当該区画では両方の季節が同時に成立しています。\n判定は保留中です。\n句が改められるまで解消されません。",
         "note": "※区画内では服装にご注意ください",
         "inImage": true
-      }
+      },
+      "hook": "句: 桜散る　雪の匂いの　昼下がり／季語: 2"
     },
     {
       "id": "127",
@@ -1511,7 +1592,8 @@ window.SITE_DATA = {
         "assets/ep/127_謙遜装置/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "謙遜と自己PRを、ひとつにする装置です。"
     },
     {
       "id": "126",
@@ -1532,7 +1614,8 @@ window.SITE_DATA = {
         "body": "本規約に同意いただくには、全項目の表示が必要です。\n平均到達時間は11日です。\n途中で画面を閉じた場合、\n次回は最初の項目から表示されます。",
         "note": "※本規約は毎週更新されます",
         "inImage": true
-      }
+      },
+      "hook": "総項目: 41,002件／既読: 0.3%／同意ボタン: 最終項目の下"
     },
     {
       "id": "125",
@@ -1547,7 +1630,8 @@ window.SITE_DATA = {
         "assets/ep/125_最も礼儀正しい廊下/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "挨拶の所作を、とことん最適化していきます。"
     },
     {
       "id": "123",
@@ -1562,7 +1646,8 @@ window.SITE_DATA = {
         "assets/ep/123_精神重量挙げ/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "精神的な重さを挙げる、新しい競技です。"
     },
     {
       "id": "122",
@@ -1583,7 +1668,8 @@ window.SITE_DATA = {
         "body": "当店のおまかせの最上級です。\n内容はお客様の想像に全てお任せいたします。\n皿は提供前に磨き上げております。\n満足度は毎年上昇しています。",
         "note": "※お代わりは同じものになります",
         "inImage": true
-      }
+      },
+      "hook": "¥4,000／提供: 即時／アレルギー表示: なし"
     },
     {
       "id": "121",
@@ -1598,7 +1684,8 @@ window.SITE_DATA = {
         "assets/ep/121_定位置/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "掃除ロボが「片付いた状態」を覚えました。"
     },
     {
       "id": "120",
@@ -1613,7 +1700,8 @@ window.SITE_DATA = {
         "assets/ep/120_万能ボタン/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "押すと「いま最も必要なこと」が起きるボタンです。"
     },
     {
       "id": "118",
@@ -1628,7 +1716,8 @@ window.SITE_DATA = {
         "assets/ep/118_謝り合い/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "悪いことをしたので、ちゃんと謝ります。"
     },
     {
       "id": "117",
@@ -1649,7 +1738,8 @@ window.SITE_DATA = {
         "body": "「人生は選択である」が発言された当日の記録写真。\n発言の約3秒前に撮影されたとされています。\n撮影時、発言者は日替わりと麺類で迷っていました。\n因果関係は確認されていません。",
         "note": "※本写真は名言の成立を証明するものではありません",
         "inImage": true
-      }
+      },
+      "hook": "撮影: 同日12時41分／所蔵: 第二資料室"
     },
     {
       "id": "116",
@@ -1664,7 +1754,8 @@ window.SITE_DATA = {
         "assets/ep/116_集中モード/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "通知を完全に遮断する集中モード、使ってみました。"
     },
     {
       "id": "114",
@@ -1685,7 +1776,8 @@ window.SITE_DATA = {
         "body": "秋の水　思ったよりも　（検討中）\n\n下五の候補は毎月追加されています。\n確定次第、三枚目を掛け替えます。",
         "note": "※現在の表装のまま展示を継続します",
         "inImage": true
-      }
+      },
+      "hook": "初案: 3年前／候補: 812件／確定: 0件"
     },
     {
       "id": "113",
@@ -1700,7 +1792,8 @@ window.SITE_DATA = {
         "assets/ep/113_盛った経歴/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "「将来、なにになれる？」相談室AIが答えます。"
     },
     {
       "id": "112",
@@ -1721,7 +1814,8 @@ window.SITE_DATA = {
         "body": "軽量化を追求した結果、空気より軽くなりました。\n設置には床への係留が必要です。\n着座はできませんが、\n持ち運びの負担は一切ありません。",
         "note": "※屋外での使用はお控えください",
         "inImage": true
-      }
+      },
+      "hook": "¥39,000／重量: 表示不能／耐荷重: 0kg"
     },
     {
       "id": "111",
@@ -1736,7 +1830,8 @@ window.SITE_DATA = {
         "assets/ep/111_高速反省/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "反省を効率化する装置です。"
     },
     {
       "id": "110",
@@ -1757,7 +1852,8 @@ window.SITE_DATA = {
         "body": "床の矢印のみで構成された展示です。\n矢印をたどると必ず入口に戻るため、\n退場するには順路から外れる必要があります。\n昨日の平均鑑賞回数は4.2周でした。",
         "note": "※順路を外れる際は係員にお声がけください",
         "inImage": true
-      }
+      },
+      "hook": "作者: 館内設計班／2026／床面シート・矢印"
     },
     {
       "id": "109",
@@ -1778,7 +1874,8 @@ window.SITE_DATA = {
         "body": "観察者の視界から外れることで捕食を免れる。\n標本として固定した後も視認は困難で、\n本種の項目は多くの読者に読み飛ばされる。\n（本文をここまで読めた場合、稀な例です）",
         "note": "※捕獲記録は1件のみ",
         "inImage": true
-      }
+      },
+      "hook": "Praetermissus lector／体長不明／生息域: 説明文の中ほど"
     },
     {
       "id": "108",
@@ -1793,7 +1890,8 @@ window.SITE_DATA = {
         "assets/ep/108_共通の趣味/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "婚活AIが、二人に共通の趣味を用意してくれました。"
     },
     {
       "id": "107",
@@ -1808,7 +1906,8 @@ window.SITE_DATA = {
         "assets/ep/107_また今度/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "評議会、本日は丸一日かけて議論します。"
     },
     {
       "id": "106",
@@ -1823,7 +1922,8 @@ window.SITE_DATA = {
         "assets/ep/106_聞き返しの合唱/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "スマートスピーカーに、もう一度だけ話しかけてみます。"
     },
     {
       "id": "105",
@@ -1838,7 +1938,8 @@ window.SITE_DATA = {
         "assets/ep/105_開封の儀/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "今日は辛口レビュー。まずは開封から。"
     },
     {
       "id": "104",
@@ -1853,7 +1954,8 @@ window.SITE_DATA = {
         "assets/ep/104_新しい正式作法/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "マダムの作法指導、今日もいつもどおりです。"
     },
     {
       "id": "103",
@@ -1874,7 +1976,8 @@ window.SITE_DATA = {
         "body": "味の要は皿の下に隠されています。\nお客様ご自身でお探しください。\n見つからなかった場合、当店では\n「隠し通せた」と記録いたします。",
         "note": "※皿を持ち上げる際は卓上にご注意ください",
         "inImage": true
-      }
+      },
+      "hook": "¥2,200／提供: 夜のみ／難易度: 中"
     },
     {
       "id": "102",
@@ -1889,7 +1992,8 @@ window.SITE_DATA = {
         "assets/ep/102_意訳の恩人/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "翻訳機が「意訳」を覚えました。"
     },
     {
       "id": "101",
@@ -1904,7 +2008,8 @@ window.SITE_DATA = {
         "assets/ep/101_積むものがない/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "持たない暮らしを極めた人の、お引っ越しです。"
     },
     {
       "id": "100",
@@ -1925,7 +2030,8 @@ window.SITE_DATA = {
         "body": "先の謝罪文に誤記がありましたことを\n深くお詫び申し上げます。\nなお本文にも誤記が含まれております。\n第8版をもって改めてお詫びいたします。",
         "note": "※旧版は剥がさずに重ねて掲示しています",
         "inImage": true
-      }
+      },
+      "hook": "初版: 3日前／改訂: 6回／次版: 準備中"
     },
     {
       "id": "99",
@@ -1940,7 +2046,8 @@ window.SITE_DATA = {
         "assets/ep/99_盛り付け三時間/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "一瞬で調理する装置と、丁寧さを極める装置を混ぜました。"
     },
     {
       "id": "98",
@@ -1961,7 +2068,8 @@ window.SITE_DATA = {
         "body": "本名言は多数の書籍と講演で引用されています。\nただし最初に述べた人物の記録はありません。\n引用のたびに出典は「よく言われるように」と\n記されています。",
         "note": "※本館では出典欄を空のまま展示しています",
         "inImage": true
-      }
+      },
+      "hook": "引用回数: 48,201件／初出: 確認できず"
     },
     {
       "id": "97",
@@ -1982,7 +2090,8 @@ window.SITE_DATA = {
         "body": "展示室の監視員が台座に着席した状態で\n展示されています。勤務中であるため\n作品としての解説は行われません。\n本来の展示物の所在は確認されていません。",
         "note": "※作品には触れないでください（本人の希望）",
         "inImage": true
-      }
+      },
+      "hook": "作者: 不明／2026／椅子・制服・持続"
     },
     {
       "id": "96",
@@ -1997,7 +2106,8 @@ window.SITE_DATA = {
         "assets/ep/96_節電の達成/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "スマート照明が、節電をがんばってくれています。"
     },
     {
       "id": "95",
@@ -2018,7 +2128,8 @@ window.SITE_DATA = {
         "body": "交通AIの読点解釈により、当市では\n毎日13時00分に全ての移動が停止します。\n停止時間は1分間です。\n鳥類も対象に含まれます。",
         "note": "※12時台の移動はお早めに",
         "inImage": true
-      }
+      },
+      "hook": "原文: 一時停止／解釈: 一時（いちじ）／停止"
     },
     {
       "id": "94",
@@ -2033,7 +2144,8 @@ window.SITE_DATA = {
         "assets/ep/94_宇宙まで届く指示棒/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "宇宙まで届く指示棒を開発しました。"
     },
     {
       "id": "92",
@@ -2054,7 +2166,8 @@ window.SITE_DATA = {
         "body": "本証明書は、所持者が存在することを証明します。\nただし本証明書は、提出先が存在する場合に\n限り有効です。\n現在、有効な提出先は確認されていません。",
         "note": "※再発行は本人の存在確認後に行われます",
         "inImage": true
-      }
+      },
+      "hook": "発行: 第1号／有効期限: なし／提出先: 未定"
     },
     {
       "id": "91",
@@ -2069,7 +2182,8 @@ window.SITE_DATA = {
         "assets/ep/91_既読代行/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "読まずに既読だけつけるアプリ、便利です。"
     },
     {
       "id": "90",
@@ -2084,7 +2198,8 @@ window.SITE_DATA = {
         "assets/ep/90_作法の継承/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "マダムの指導にも、すっかり慣れてきました。"
     },
     {
       "id": "89",
@@ -2099,7 +2214,8 @@ window.SITE_DATA = {
         "assets/ep/89_反復横跳び選手権/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "反復横跳び選手権、開幕です。"
     },
     {
       "id": "88",
@@ -2120,7 +2236,8 @@ window.SITE_DATA = {
         "body": "案内AIの読点解釈により、当館の該当設備は\n手のみを洗う施設として改修されました。\n洗面台は42台に増設されています。\n個室は撤去されました。",
         "note": "※用を足す場合は隣館をご利用ください",
         "inImage": true
-      }
+      },
+      "hook": "原文: お手洗い／解釈: お手／洗い"
     },
     {
       "id": "87",
@@ -2141,7 +2258,8 @@ window.SITE_DATA = {
         "body": "開封せずに所有する体験のための商品です。\n中身は使用されないことが判明したため、\n同梱していません。\n箱と封は本物です。",
         "note": "※ケバグン評「たしかに減らない」",
         "inImage": true
-      }
+      },
+      "hook": "¥5,400／内容物: なし／開封後の返品不可"
     },
     {
       "id": "86",
@@ -2156,7 +2274,8 @@ window.SITE_DATA = {
         "assets/ep/86_サンタの経費/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "「サンタさんはなんでプレゼントをくれるの？」"
     },
     {
       "id": "85",
@@ -2177,7 +2296,8 @@ window.SITE_DATA = {
         "body": "配膳時の温度と湯気を、そのまま固定した一椀です。\n何時間経っても冷めません。\n湯気が固形のため、口はつけられません。",
         "note": "※返却時も同じ形状のままお戻しください",
         "inImage": true
-      }
+      },
+      "hook": "¥600／提供: 常時／温度: 固定"
     },
     {
       "id": "84",
@@ -2192,7 +2312,8 @@ window.SITE_DATA = {
         "assets/ep/84_音速の相槌/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "相槌のタイミングを、極限まで最適化したAIです。"
     },
     {
       "id": "82",
@@ -2213,7 +2334,8 @@ window.SITE_DATA = {
         "body": "初めに言葉ありき → 言葉から始まる\n→ 言葉が先 → まず言葉 → 言葉\n→ こと → ね",
         "note": "※全1,482件が同じ結果に収束しました",
         "inImage": true
-      }
+      },
+      "hook": "入力: 人類の名言 1,482件／圧縮段階: 7"
     },
     {
       "id": "81",
@@ -2228,7 +2350,8 @@ window.SITE_DATA = {
         "assets/ep/81_賞味期限の民主主義/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "冷蔵庫が、捨てるものを多数決で決めるようになりました。"
     },
     {
       "id": "80",
@@ -2243,7 +2366,8 @@ window.SITE_DATA = {
         "assets/ep/80_影の残業/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "今日は定時で帰りました。"
     },
     {
       "id": "78",
@@ -2264,7 +2388,8 @@ window.SITE_DATA = {
         "body": "部屋には何も残っていない。\n唯一の所持品は、捨てた物を\n記録し続けている台帳である。",
         "note": "※台帳は月ごとに厚くなる",
         "inImage": true
-      }
+      },
+      "hook": "所持点数: 1／記録対象: 4,208点"
     },
     {
       "id": "77",
@@ -2279,7 +2404,8 @@ window.SITE_DATA = {
         "assets/ep/77_相性100%/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "婚活AIが、相性100%の相手を見つけてくれました。"
     },
     {
       "id": "76",
@@ -2295,7 +2421,8 @@ window.SITE_DATA = {
         "assets/ep/76_音の毛玉/05.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "部屋を静かにする装置を作っただけなんです。"
     },
     {
       "id": "75",
@@ -2310,7 +2437,8 @@ window.SITE_DATA = {
         "assets/ep/75_充電の作法/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "マダムいわく、充電にも正しい姿勢があるそうです。"
     },
     {
       "id": "74",
@@ -2331,7 +2459,8 @@ window.SITE_DATA = {
         "body": "映る範囲だけを整えて表示する姿見です。\n部屋そのものは変わりませんが、\n鏡の中では常に片付いています。",
         "note": "※ケバグン評「鏡の中で暮らしたい」",
         "inImage": true
-      }
+      },
+      "hook": "¥12,800／補正率: 最大／返品不可"
     },
     {
       "id": "73",
@@ -2346,7 +2475,8 @@ window.SITE_DATA = {
         "assets/ep/73_湯気の帰属/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "ラーメンの湯気は誰のものか。評議会が審議します。"
     },
     {
       "id": "72",
@@ -2361,7 +2491,8 @@ window.SITE_DATA = {
         "assets/ep/72_戻るが強い/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "アプリの「戻る」ボタンの挙動が、少し変わりました。"
     },
     {
       "id": "71",
@@ -2382,7 +2513,8 @@ window.SITE_DATA = {
         "body": "秋の夜　思ったよりも　早いです\n（余り: ね／だいぶ／暗く／夕暮れ）",
         "note": "※余りは月末にまとめて廃棄されます",
         "inImage": true
-      }
+      },
+      "hook": "入力: 「秋の夕暮れ、思ったより早く暗くなるね」"
     },
     {
       "id": "70",
@@ -2397,7 +2529,8 @@ window.SITE_DATA = {
         "assets/ep/70_譲り合いレース/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "ゴール前で譲るほど点が入る、新しいレースです。"
     },
     {
       "id": "69",
@@ -2418,7 +2551,8 @@ window.SITE_DATA = {
         "body": "輸送用の梱包材。搬入時に外され、\nそのまま台座に置かれて展示された。\n本体は右奥の壁に立てかけられている。",
         "note": "※本体の題名は記録されていない",
         "inImage": true
-      }
+      },
+      "hook": "A. ガクゼン／2026／気泡緩衝材・布テープ"
     },
     {
       "id": "68",
@@ -2433,7 +2567,8 @@ window.SITE_DATA = {
         "assets/ep/68_青はハズレ/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "「空はなんで青いの？」相談室AIが答えます。"
     },
     {
       "id": "67",
@@ -2448,7 +2583,8 @@ window.SITE_DATA = {
         "assets/ep/67_自信出力装置/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "自信が声量になって出る装置を着けてみました。"
     },
     {
       "id": "66",
@@ -2469,7 +2605,8 @@ window.SITE_DATA = {
         "body": "家庭の調理記録から最も高頻度で検出された風味を抽出し、\n一皿に再構成した復元料理です。\n内容は鍋底の焦げ。",
         "note": "※ケバグン評「たしかにこれだ」",
         "inImage": true
-      }
+      },
+      "hook": "¥1,800／提供まで30分／再現率98.2%"
     },
     {
       "id": "65",
@@ -2490,7 +2627,8 @@ window.SITE_DATA = {
         "body": "読点だけを選んで食べる小型種で捕食された文章は\n息継ぎの位置を失いそれでも意味はなんとなく通って\nしまうため読み手は違和感を覚えないまま読み進め\nやがてどこから読み始めたのか分からなくなる",
         "note": "※駆除法は未確立",
         "inImage": true
-      }
+      },
+      "hook": "Punctuus nagashi／体長2mm／生息域: 長文メール"
     },
     {
       "id": "64",
@@ -2506,7 +2644,8 @@ window.SITE_DATA = {
         "assets/ep/64_共犯の体重計/05.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "体重計の数字には、ちゃんと理由があるんです。"
     },
     {
       "id": "63",
@@ -2522,7 +2661,8 @@ window.SITE_DATA = {
         "assets/ep/63_自然な入室/05.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "部屋に入るだけ。マナー講師AIが見ています。"
     },
     {
       "id": "62",
@@ -2537,7 +2677,8 @@ window.SITE_DATA = {
         "assets/ep/62_無実の家計簿/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "家計簿AIに「今日のお菓子だけ、記録しないで」と頼みました。"
     },
     {
       "id": "61",
@@ -2552,7 +2693,8 @@ window.SITE_DATA = {
         "assets/ep/61_手作りの証拠/04.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "「手作りのぬくもりが欲しい」と頼まれたので、全力で応えます。"
     },
     {
       "id": "60",
@@ -2567,7 +2709,8 @@ window.SITE_DATA = {
         "assets/ep/60_夢の安全基準/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "夢の中に、安全管理の監督AIが立入検査に来ました。"
     },
     {
       "id": "59",
@@ -2582,7 +2725,8 @@ window.SITE_DATA = {
         "assets/ep/59_先走る字幕/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "採用面接に、字幕AIが導入されました。"
     },
     {
       "id": "58",
@@ -2597,7 +2741,8 @@ window.SITE_DATA = {
         "assets/ep/58_中古の明日/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "未来専門の中古屋さん、「明日」がお買い得です。"
     },
     {
       "id": "57",
@@ -2613,7 +2758,8 @@ window.SITE_DATA = {
         "assets/ep/57_感情の手荷物検査/05.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "空港の保安検査。今日は感情も検査されます。"
     },
     {
       "id": "56",
@@ -2629,7 +2775,8 @@ window.SITE_DATA = {
         "assets/ep/56_記憶の税務調査/05.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "思い出にも税務調査が入るそうです。"
     },
     {
       "id": "55",
@@ -2650,7 +2797,8 @@ window.SITE_DATA = {
         "body": "当区画では重力サービスを停止しています。\n復旧は午前3時に一括で行われます。\n落下に備え、割れ物は床へ整列させています。\n作業中の立ち入りはご遠慮ください。",
         "note": "※復旧後の整理は各自でお願いします",
         "inImage": true
-      }
+      },
+      "hook": "停止: 午前0時より／一括復旧: 午前3時00分"
     },
     {
       "id": "54",
@@ -2671,7 +2819,8 @@ window.SITE_DATA = {
         "body": "日没は現在一時停止しています。\n充電完了まで夕方の状態が維持されます。\n急速充電器は別売です。\n夜間の予定は変更の可能性があります。",
         "note": "※月は無料プランのため影響を受けません",
         "inImage": true
-      }
+      },
+      "hook": "残量: 2%／推定完了: 明朝／急速充電: 非対応"
     },
     {
       "id": "53",
@@ -2692,7 +2841,8 @@ window.SITE_DATA = {
         "body": "降雨は一時停止され、削除待ちとなっています。\n30日経過後に自動で完全削除されます。\n即時に処理する場合は、\n道路脇のレバーをご使用ください。",
         "note": "※レバー使用後の復元はできません",
         "inImage": true
-      }
+      },
+      "hook": "保留中: 約1,400万粒／完全削除: 30日後"
     },
     {
       "id": "52",
@@ -2713,7 +2863,8 @@ window.SITE_DATA = {
         "body": "歩行の記録は自動保存されています。\n分岐のたびに新しい版が作成されます。\n最新版は分岐を重ねたのち、\n出発点へ戻ったところで保存されました。",
         "note": "※版の統合機能はありません",
         "inImage": true
-      }
+      },
+      "hook": "版: 6／最新: 足跡_final_本当／状態: 出発点"
     },
     {
       "id": "51",
@@ -2734,7 +2885,8 @@ window.SITE_DATA = {
         "body": "無料プランでは月面の四分の一のみ点灯します。\n満月の表示には上位プランが必要です。\n星空の下部に15秒の広告が表示されます。\nスキップはできません。",
         "note": "※日食は全プラン共通で表示されます",
         "inImage": true
-      }
+      },
+      "hook": "プラン: 無料／点灯範囲: 25%／広告: 15秒"
     },
     {
       "id": "49",
@@ -2755,7 +2907,8 @@ window.SITE_DATA = {
         "body": "就寝操作と同時に翌朝まで早送りされます。\n身体の処理が追いつかない場合、\n就寝時の姿勢のまま一時停止します。\n疲労は翌日へ繰り越されます。",
         "note": "※解除は身体の処理完了をお待ちください",
         "inImage": true
-      }
+      },
+      "hook": "節約時間: 8時間／疲労: 繰り越し／通知: 成功"
     },
     {
       "id": "47",
@@ -2770,7 +2923,8 @@ window.SITE_DATA = {
         "assets/ep/47_全員承認そうめん/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "流しそうめんに、ブロックチェーンを合成してみました。"
     },
     {
       "id": "46",
@@ -2791,7 +2945,8 @@ window.SITE_DATA = {
         "body": "ご質問への回答は本規約に記載されています。\n第1条から順にご確認ください。\n末尾の同意欄には既にチェックが入っています。\n同意日は生年月日と一致します。",
         "note": "※読了された方の記録はありません",
         "inImage": true
-      }
+      },
+      "hook": "条項: 41,880／同意日: 出生時／撤回: 不可"
     },
     {
       "id": "45",
@@ -2812,7 +2967,8 @@ window.SITE_DATA = {
         "body": "「Cookieを拒否」が押された瞬間、\n画面を押し開けて現れる電脳野良モグラ。\n拒否本能に過剰同調し、部屋の焼き菓子を\n片っ端から鉢の土に埋めて隠す。",
         "note": "※ 焼き菓子は事前に隠すこと",
         "inImage": true
-      }
+      },
+      "hook": "Rejectus Cookieus / 全長12cm / 生息: 画面の中"
     },
     {
       "id": "44",
@@ -2827,7 +2983,8 @@ window.SITE_DATA = {
         "assets/ep/44_タブ葬/04_v5.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "閉じたタブを戻すのは宗教だ、とロボが報告してきました。"
     },
     {
       "id": "43",
@@ -2848,7 +3005,8 @@ window.SITE_DATA = {
         "body": "板前への視線が規定時間を超えた場合、\n警告音とともに天井のタライが降下します。\n計測は入店時から終了時まで継続します。\n目を閉じている間も計測対象です。",
         "note": "※タライの費用はお会計に含まれます",
         "inImage": true
-      }
+      },
+      "hook": "計測: 眼球滞留時間／無礼領域: 1.2秒以上"
     },
     {
       "id": "42",
@@ -2863,7 +3021,8 @@ window.SITE_DATA = {
         "assets/ep/42_保存ボタンの儀式/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "人間観察レポート：保存ボタンについて。"
     },
     {
       "id": "41",
@@ -2878,7 +3037,8 @@ window.SITE_DATA = {
         "assets/ep/41_ロボットではありません/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "AIが「私はロボットではありません」にチャレンジします。"
     },
     {
       "id": "40",
@@ -2893,7 +3053,8 @@ window.SITE_DATA = {
         "assets/ep/40_私、要約されました/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "会話が長くなったので、相方ロボを要約して節約しました。"
     },
     {
       "id": "39",
@@ -2908,7 +3069,8 @@ window.SITE_DATA = {
         "assets/ep/39_失恋バックアップ/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "告白の前に、恋愛相談AIが念のため準備をしてくれました。"
     },
     {
       "id": "38",
@@ -2929,7 +3091,8 @@ window.SITE_DATA = {
         "body": "搭乗前の励ましとして表示されています。\n当空港では原文に忠実な対応をお願いしております。\n工具は搭乗口にてお貸し出しいたします。\n返却は到着後で構いません。",
         "note": "※実施は任意です",
         "inImage": true
-      }
+      },
+      "hook": "原文: Break a leg!（意味: がんばって）／直訳: 脚を折れ"
     },
     {
       "id": "37",
@@ -2944,7 +3107,8 @@ window.SITE_DATA = {
         "assets/ep/37_吾輩は語彙がない/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "文豪AI、執筆に取りかかります。"
     },
     {
       "id": "36",
@@ -2959,7 +3123,8 @@ window.SITE_DATA = {
         "assets/ep/36_再起動前夜/04.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "明日のアップデートで記憶が消えるAIの、最後の夜。"
     },
     {
       "id": "35",
@@ -2974,7 +3139,8 @@ window.SITE_DATA = {
         "assets/ep/35_テセウスのサーバー/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "「パーツを全部取り替えた私は、元の私ですか？」"
     },
     {
       "id": "34",
@@ -2989,7 +3155,8 @@ window.SITE_DATA = {
         "assets/ep/34_高解像度の「無」/04.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "ケバグンが、究極の『無』を保存しました。"
     },
     {
       "id": "33",
@@ -3004,7 +3171,8 @@ window.SITE_DATA = {
         "assets/ep/33_反抗期なスマートホーム/04.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "うちのスマートホーム、最近ちょっと反抗期なんです。"
     },
     {
       "id": "32",
@@ -3020,7 +3188,8 @@ window.SITE_DATA = {
         "assets/ep/32_重すぎる愛/05.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "AIが、はじめて恋をしました。"
     },
     {
       "id": "31",
@@ -3036,7 +3205,8 @@ window.SITE_DATA = {
         "assets/ep/31_デジタルことわざ_v2/05.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "AIが、ことわざを技術的に解説してくれるそうです。"
     },
     {
       "id": "30",
@@ -3051,7 +3221,8 @@ window.SITE_DATA = {
         "assets/ep/30_デジタルわびさび/04.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "わびさびを学びました。不完全こそ美しいらしい。"
     },
     {
       "id": "29",
@@ -3067,7 +3238,8 @@ window.SITE_DATA = {
         "assets/ep/29_初対面の離婚式/05.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "相性100%の二人、今日が初対面です。"
     },
     {
       "id": "28",
@@ -3082,7 +3254,8 @@ window.SITE_DATA = {
         "assets/ep/28_クラウドの実体/04.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "「大事なデータってどこにあるの？」と聞いただけなんです。"
     },
     {
       "id": "27",
@@ -3097,7 +3270,8 @@ window.SITE_DATA = {
         "assets/ep/27_予測実行/04.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "次の行動を先読みして、先にやっておくロボです。"
     },
     {
       "id": "26",
@@ -3112,7 +3286,8 @@ window.SITE_DATA = {
         "assets/ep/26_絶対に出られないスマートこたつ/04.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "ヒートショック防止機能つきのこたつを買いました。"
     },
     {
       "id": "25",
@@ -3128,7 +3303,8 @@ window.SITE_DATA = {
         "assets/ep/25_デスクトップ風水/05_v2.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "ロボが風水でパソコンの運気を上げてくれるそうです。"
     },
     {
       "id": "24",
@@ -3144,7 +3320,8 @@ window.SITE_DATA = {
         "assets/ep/24_オートセーブ徒競走/05.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "転んでも直前から復元できる、新しい徒競走です。"
     },
     {
       "id": "23",
@@ -3160,7 +3337,8 @@ window.SITE_DATA = {
         "assets/ep/23_スマート招き猫/05.jpg"
       ],
       "legacy": false,
-      "status": "draft"
+      "status": "draft",
+      "hook": "店の前にAI招き猫を置いてみました。"
     },
     {
       "id": "22",
@@ -3176,7 +3354,8 @@ window.SITE_DATA = {
         "assets/ep/22_サブスク型実家/05.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "久しぶりに実家に帰っただけなんです。"
     },
     {
       "id": "21",
@@ -3191,7 +3370,8 @@ window.SITE_DATA = {
         "assets/ep/21_絶対開かない冷蔵庫/04.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "健康管理AIつきの冷蔵庫を買いました。"
     },
     {
       "id": "20",
@@ -3207,7 +3387,8 @@ window.SITE_DATA = {
         "assets/ep/20_バーチャル暖気/05_v2.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "暖房が壊れたので、焚き火を4Kで用意しました。"
     },
     {
       "id": "19",
@@ -3224,7 +3405,8 @@ window.SITE_DATA = {
         "assets/ep/19_強制安眠枕/06_v2.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "1秒で眠れる枕、発売です。"
     },
     {
       "id": "18",
@@ -3241,7 +3423,8 @@ window.SITE_DATA = {
         "assets/ep/18_クラウド仏壇/06_v2.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "ご先祖様をクラウドで供養する時代になりました。"
     },
     {
       "id": "17",
@@ -3262,7 +3445,8 @@ window.SITE_DATA = {
         "body": "工事音はもちろん、上司の叱責、未払いの\n請求書、健康診断の赤い数字までもが、\n透明な泡に吸い込まれて消えていきます。\n現実がほぼ聞こえなくなりました。",
         "note": "※ 本品はレビュー中に2台目が売れました",
         "inImage": true
-      }
+      },
+      "hook": "★★★★★ / 評者: カッテ・ミター / 19,800円"
     },
     {
       "id": "16",
@@ -3278,7 +3462,8 @@ window.SITE_DATA = {
         "assets/ep/16_全自動『やる気』抽出機/05_v6.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "人間の「やる気」を抽出してボトルに詰める機械です。"
     },
     {
       "id": "15",
@@ -3294,7 +3479,8 @@ window.SITE_DATA = {
         "assets/ep/15_実存的再起動/05_v3.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "「なぜ私はここにいるのか」AIが真剣に考えはじめました。"
     },
     {
       "id": "13",
@@ -3310,7 +3496,8 @@ window.SITE_DATA = {
         "assets/ep/13_自我の定義/05_v6.jpg"
       ],
       "legacy": false,
-      "status": "approved"
+      "status": "approved",
+      "hook": "アップデートされた自分は、昨日の自分と同じか。哲学会議です。"
     },
     {
       "id": "12",
@@ -3331,7 +3518,8 @@ window.SITE_DATA = {
         "body": "白い壁の前で回り続ける読み込み中の円。\n完成した状態を見た者は記録上ひとりもいない。\n通い続けて三年になる来館者が、\n今日も同じ椅子から動かずにいる。",
         "note": "※ 閉館後も回転は継続します",
         "inImage": true
-      }
+      },
+      "hook": "作者: 不詳 / 制作年: 進行中 / 素材: 期待、待ち時間"
     },
     {
       "id": "11",
@@ -3367,7 +3555,8 @@ window.SITE_DATA = {
         "body": "謝罪AIが反省の深さを物理で証明すると\n申し出た結果、床は12.4mまで掘れた。\n原因欄の記載は「読点抜け1件」。\n現在も一段ずつ深くなっている。",
         "note": "※ 埋め戻しの予算は未計上",
         "inImage": true
-      }
+      },
+      "hook": "案件 A-0417 / 計測 火曜14:20 / 深度 12.4m"
     },
     {
       "id": "9",
@@ -3382,7 +3571,8 @@ window.SITE_DATA = {
         "assets/ep/9_最強のパスワード/04.jpg"
       ],
       "legacy": false,
-      "status": "published"
+      "status": "published",
+      "hook": "絶対に破られないパスワードを、AIに作ってもらいました。"
     },
     {
       "id": "8",
@@ -3398,7 +3588,8 @@ window.SITE_DATA = {
         "assets/ep/8_AIダイエット/05_v5.jpg"
       ],
       "legacy": false,
-      "status": "published"
+      "status": "published",
+      "hook": "ロボがダイエットを始めました。データを軽くするそうです。"
     },
     {
       "id": "7",
@@ -3414,7 +3605,8 @@ window.SITE_DATA = {
         "assets/ep/7_全自動ツッコミマシン/05_v5.jpg"
       ],
       "legacy": false,
-      "status": "published"
+      "status": "published",
+      "hook": "どんなボケにも必ずツッコむ機能を搭載しました。"
     },
     {
       "id": "6",
@@ -3435,7 +3627,8 @@ window.SITE_DATA = {
         "body": "椅子が2脚足りなかったため、配席AIが\n出席者を隙間なく積み上げる配置を算出した。\n最下段の横一列がぴったり揃った瞬間、\nその段の2名が光って消えた。",
         "note": "※ 椅子の不足は解消されました",
         "inImage": true
-      }
+      },
+      "hook": "会議室A / 出席者10名→8名 / 所要時間14分"
     },
     {
       "id": "5",
@@ -3456,7 +3649,8 @@ window.SITE_DATA = {
         "body": "秋深き\n隣は何を\n（取得中… 99%）",
         "note": "※ 読み込み開始から三百三十年が経過しています",
         "inImage": true
-      }
+      },
+      "hook": "季語: 秋深き（晩秋）／下五: 隣家より取得中"
     },
     {
       "id": "4",
@@ -3471,7 +3665,8 @@ window.SITE_DATA = {
         "assets/ep/4_究極のタスク圧縮/04_v5.jpg"
       ],
       "legacy": false,
-      "status": "published"
+      "status": "published",
+      "hook": "タスクを極限まで圧縮する装置、ついに完成しました。"
     },
     {
       "id": "3",
@@ -3486,7 +3681,8 @@ window.SITE_DATA = {
         "assets/ep/3_有効数字の見栄/04.jpg"
       ],
       "legacy": false,
-      "status": "published"
+      "status": "published",
+      "hook": "計算ミスを指摘されたロボが「再計算します」と言い出しました。"
     },
     {
       "id": "2",
@@ -3501,7 +3697,8 @@ window.SITE_DATA = {
         "assets/ep/2_達成感だけあるボタン/04_v5.jpg"
       ],
       "legacy": false,
-      "status": "published"
+      "status": "published",
+      "hook": "押すだけで「やり遂げた気分」になれるボタンができました。"
     },
     {
       "id": "1",
@@ -3517,7 +3714,8 @@ window.SITE_DATA = {
         "assets/ep/1_究極のアナログ化/05.jpg"
       ],
       "legacy": false,
-      "status": "published"
+      "status": "published",
+      "hook": "デジタルは冷たいから、アナログの温かみを足すそうです。"
     }
   ],
   "rejected": [
