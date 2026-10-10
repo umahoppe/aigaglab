@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIギャグ実験室 — バグは仕様です</title>
+<meta name="description" content="ネタ考案から作画・更新までAIが全部やっているギャグ実験室。毎日06:00に今日のバグ報告をお届けします。">
+<!--
+  AIギャグ実験室 ホームページ（デザイン案 v2.0）
+  - 表示データは data/site.js（= data/site.json と同じ内容）だけを見る。HTMLに手書きのネタは無い。
+  - データは `python3 web/build.py` で生成。中身は tools/gag_board/server.py の build_payload() 由来。
+  - 詳細は docs/homepage_design.md
+
+  v2.0 の変更点
+   1. 実験進行ボード（4レーンのカンバン）を廃止 → 数字だけの「計器」1行に。
+      未公開ネタのタイトルが出ていた＝オチの先出しになっていたため。進行管理は tools/gag_board/ の役目。
+   2. 「5つの研究領域」セクションを廃止（記録棚のフィルタと同じ5棟の二重ナビだった）。
+      棟の色と説明はフィルタボタンへ集約した。更新ログ（git log）も非公開に。
+   3. 配色を反転。地＝紙（作画の vintage print と同じ）、ティールは帯とボツ棚だけに降格。
+      サイトが暗いティールの実験室一色なのは style_guide.md の「暗い実験室デフォルト禁止」と矛盾していた。
+   4. 「これは何？」ブロックを上部に追加＋ #ep-045 形式のパーマリンク（1話ずつ共有できる）。
+-->
+<style>
+:root{
+  --ink:#161311;
+  --paper:#f4ead4;   /* ページ地。作画の vintage print と同じ */
+  --card:#fffdf6;    /* カード地。紙地の上でカードが浮くように一段明るく */
+  --band:#e7d9ba;    /* 帯・注釈の地 */
+  --muted:#6b6255;
+  --rule:#b9ac93;
+  --teal:#0d3a42;
+  --teal-d:#07262c;
+  --teal-l:#14515c;
+  --yellow:#ffd63b;
+  --pink:#ff4d86;
+  --pink-d:#c9295f;  /* 紙地の上で読ませるピンク */
+  --orange:#ff8a2b;
+  --word:#ff6b6b;
+  --tech:#37c978;
+  --think:#ffd93b;
+  --sense:#c592ff;
+  --life:#5fbadf;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,sans-serif;
+  --shadow:6px 6px 0 var(--ink);
+  --shadow-s:4px 4px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--gothic);color:var(--ink);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased}
+/* 紙のザラつき（style_guide.md の grainy paper texture をWebでも踏襲） */
+body::before{
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.22;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{line-height:1.25;margin:0;font-weight:900;letter-spacing:.01em}
+.wrap{width:min(1120px,92vw);margin-inline:auto}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em}
+
+/* ===== 稼働ステータス ===== */
+.statusbar{background:var(--ink);color:var(--paper);border-bottom:2px solid #000}
+.statusbar .wrap{display:flex;gap:16px;align-items:center;min-height:34px;flex-wrap:wrap;padding:4px 0}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--tech);animation:pulse 2s infinite;flex:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(55,201,120,.7)}70%{box-shadow:0 0 0 8px rgba(55,201,120,0)}100%{box-shadow:0 0 0 0 rgba(55,201,120,0)}}
+.statusbar b{color:var(--yellow)}
+
+/* ===== ヘッダー ===== */
+header.site{position:sticky;top:0;z-index:50;background:var(--teal);color:var(--paper);border-bottom:4px solid var(--ink)}
+header.site .wrap{display:flex;align-items:center;gap:16px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:12px;flex:none}
+.logo-mark{width:52px;height:52px;border-radius:50%;border:3px solid var(--ink);background:var(--yellow);overflow:hidden;box-shadow:var(--shadow-s);flex:none}
+.logo-mark img{width:100%;height:100%;object-fit:cover}
+.logo-txt strong{display:block;font-size:1.12rem;font-weight:900}
+.logo-txt em{font-style:normal;font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;color:var(--yellow)}
+nav.wards{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav.wards a{font-size:.76rem;font-weight:700;padding:5px 10px;border:2px solid var(--ink);border-radius:999px;background:#0a3239;box-shadow:2px 2px 0 var(--ink);cursor:pointer}
+nav.wards a:hover{background:var(--c,var(--yellow));color:var(--ink)}
+header.site .menu-btn{margin-left:auto;display:none;font-size:.8rem;padding:8px 14px}
+
+/* ===== 共通 ===== */
+section{padding:52px 0}
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(1.25rem,3.6vw,1.75rem)}
+.sec-head h2 span{color:var(--pink-d)}
+.sec-head p{margin:0;font-size:.84rem;color:var(--muted);max-width:66ch}
+.tape{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;background:var(--yellow);color:var(--ink);border:2px solid var(--ink);padding:2px 9px;transform:rotate(-1.2deg);font-weight:700}
+.warn-box{background:var(--pink);color:#fff;border:3px solid var(--ink);padding:14px 16px;margin:16px 0;font-weight:700}
+.warn-box code{background:rgba(0,0,0,.35);padding:2px 6px;font-family:var(--mono)}
+
+/* ===== ヒーロー ===== */
+.hero{background:
+   radial-gradient(circle at 14% 8%,rgba(255,214,59,.42),transparent 58%),
+   repeating-linear-gradient(90deg,rgba(22,19,17,.055) 0 1px,transparent 1px 46px),
+   repeating-linear-gradient(0deg,rgba(22,19,17,.055) 0 1px,transparent 1px 46px),
+   var(--paper);
+  border-bottom:4px solid var(--ink);padding:38px 0 46px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.plate{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;background:var(--ink);color:var(--yellow);display:inline-block;padding:4px 10px;border:2px solid #000}
+.hero h1{font-size:clamp(1.9rem,6.4vw,3.2rem);margin:14px 0 10px;text-shadow:4px 4px 0 var(--yellow)}
+.hero .lead{margin:0 0 18px;font-size:.95rem;color:var(--muted);max-width:46ch}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tag{font-family:var(--mono);font-size:.68rem;padding:3px 9px;border:2px solid var(--ink);background:var(--card);color:var(--ink);font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:900;font-size:.95rem;padding:12px 22px;border:3px solid var(--ink);background:var(--yellow);color:var(--ink);box-shadow:var(--shadow);cursor:pointer;font-family:inherit}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+.btn.ghost{background:transparent;color:var(--paper);border-color:var(--paper);box-shadow:4px 4px 0 rgba(0,0,0,.5)}
+.hero-panels{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+/* 1枚ネタは絵が主役。ただし縦に伸びすぎないよう幅を抑える */
+.hero-panels.single{max-width:330px;margin-inline:auto}
+.hero-panels .pn{border:3px solid var(--ink);background:var(--card);box-shadow:var(--shadow-s);overflow:hidden;aspect-ratio:4/5}
+.hero-panels .pn img{width:100%;height:100%;object-fit:cover}
+.hero-panels .pn:nth-of-type(2){transform:translateY(14px)}
+.stamp{position:absolute;right:-10px;top:-18px;background:var(--pink);color:#fff;border:3px solid var(--ink);font-family:var(--mono);font-size:.66rem;font-weight:700;padding:6px 10px;transform:rotate(8deg);box-shadow:var(--shadow-s);letter-spacing:.1em;z-index:1}
+
+/* ===== これは何？ ＋ 計器 ===== */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;align-items:start}
+.about-txt{background:var(--card);border:3px solid var(--ink);box-shadow:var(--shadow);padding:18px 20px}
+.about-txt h2{font-size:1.15rem;margin-bottom:8px}
+.about-txt h2 span{color:var(--pink-d)}
+.about-txt p{margin:0 0 8px;font-size:.9rem}
+.about-txt p:last-child{margin:0;color:var(--muted);font-size:.82rem}
+/* 計器：数字だけ。タイトルを出さないので未公開ネタのオチが漏れない */
+.gauge{background:var(--teal-d);border:3px solid var(--ink);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(2,1fr)}
+.gauge div{padding:12px 14px;border-right:1px dashed var(--teal-l);border-bottom:1px dashed var(--teal-l)}
+.gauge div:nth-child(2n){border-right:0}
+.gauge div:nth-last-child(-n+2){border-bottom:0}
+.gauge .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:#8fa8a5;display:block}
+.gauge .v{font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--yellow);line-height:1.2}
+.gauge .v small{font-size:.62rem;letter-spacing:.1em;color:#8fa8a5;margin-left:4px;font-weight:400}
+
+/* ===== 記録棚 ===== */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.filters button{font-size:.76rem;font-weight:700;padding:5px 11px;border:2px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:2px 2px 0 var(--ink);cursor:pointer;font-family:inherit}
+.filters button:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--c,var(--yellow))}
+.filters .sub button{font-family:var(--mono);font-size:.68rem}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:16px}
+.ep{border:3px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:var(--shadow-s);cursor:pointer;display:flex;flex-direction:column;position:relative;text-align:left;padding:0;font-family:inherit}
+.ep .thumb{aspect-ratio:4/5;overflow:hidden;border-bottom:3px solid var(--ink);background:var(--band)}
+.ep .thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.ep .meta{padding:9px 10px}
+.ep .no{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--muted)}
+.ep h3{font-size:.92rem;margin:2px 0 5px}
+.ep .chiprow{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.ep .cat{font-size:.66rem;font-family:var(--mono);border:2px solid var(--ink);padding:1px 5px;background:var(--c,#fff);display:inline-block;font-weight:700}
+.ep .cat.old{background:var(--teal);color:var(--paper);border-style:dashed}
+.ep:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.ep .badge{position:absolute;top:8px;left:-4px;background:var(--pink);color:#fff;border:2px solid var(--ink);font-family:var(--mono);font-size:.6rem;font-weight:700;padding:2px 7px;letter-spacing:.08em}
+
+/* ===== ボツ棚（唯一、暗さに意味があるセクション） ===== */
+.botsu{background:repeating-linear-gradient(135deg,rgba(255,77,134,.07) 0 12px,transparent 12px 24px),var(--teal-d);
+  color:var(--paper);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.botsu .sec-head h2 span{color:var(--yellow)}
+.botsu .sec-head p{color:#a9bcba}
+.botsugrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.bcard{background:var(--card);color:var(--ink);border:3px solid var(--ink);box-shadow:var(--shadow-s);display:flex;flex-direction:column}
+.bcard .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:3px solid var(--ink)}
+.bcard .strip div{aspect-ratio:4/5;overflow:hidden;filter:grayscale(.6) contrast(.95);border-right:2px solid var(--ink)}
+.bcard .strip div:last-child{border-right:0}
+.bcard .strip.one div{aspect-ratio:16/9}
+.bcard .strip img{width:100%;height:100%;object-fit:cover}
+.bcard .noimg{border-bottom:3px solid var(--ink);background:var(--band);font-family:var(--mono);font-size:.7rem;padding:14px;color:var(--muted);text-align:center}
+.bcard .b{padding:12px 13px;display:flex;flex-direction:column;gap:7px;flex:1}
+.bcard h3{font-size:1rem}
+.bcard p{margin:0;font-size:.78rem}
+.bcard .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ng{display:inline-block;border:3px solid var(--pink-d);color:var(--pink-d);font-family:var(--mono);font-weight:700;font-size:.74rem;padding:1px 8px;transform:rotate(-4deg)}
+.specimen{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;background:var(--ink);color:var(--yellow);padding:3px 8px}
+.freed{font-family:var(--mono);font-size:.66rem;color:var(--muted);border-top:1px dashed var(--rule);padding-top:6px;margin-top:auto}
+.freed b{color:#a8323f}
+.restore{display:inline-block;font-family:var(--mono);font-size:.62rem;border:2px solid var(--tech);color:#1c7a49;padding:0 5px}
+
+/* ===== 研究員 ===== */
+.crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.member{border:3px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:var(--shadow-s);overflow:hidden}
+.member .ph{aspect-ratio:1/1;background:var(--band);border-bottom:3px solid var(--ink);overflow:hidden}
+.member .ph img{width:100%;height:100%;object-fit:cover}
+.member .m{padding:10px 11px}
+.member h3{font-size:.92rem}
+.member .role{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.member p{margin:0;font-size:.76rem}
+
+/* ===== フッター ===== */
+footer.site{background:var(--ink);color:var(--paper);padding:30px 0;border-top:4px solid #000}
+footer.site .wrap{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center}
+footer.site p{margin:0;font-size:.78rem;color:#a5b7b5;max-width:52ch}
+footer.site .big{font-size:1.05rem;font-weight:900;color:var(--yellow)}
+
+/* ===== リーダー ===== */
+dialog.reader{border:0;padding:0;background:transparent;max-width:min(560px,94vw);width:100%}
+dialog.reader::backdrop{background:rgba(4,20,24,.86)}
+.reader-inner{background:var(--paper);border:4px solid var(--ink);box-shadow:10px 10px 0 rgba(0,0,0,.6);max-height:88vh;overflow:auto}
+.reader-top{position:sticky;top:0;background:var(--ink);color:var(--paper);display:flex;gap:12px;align-items:center;padding:10px 14px;z-index:2}
+.reader-top h3{font-size:.98rem;flex:1;min-width:0}
+.reader-top button{background:var(--yellow);border:2px solid #000;font-weight:900;width:32px;height:32px;cursor:pointer;font-family:inherit;color:var(--ink)}
+.reader-body{padding:14px;display:flex;flex-direction:column;gap:12px}
+.reader-body img{border:3px solid var(--ink);background:var(--card);width:100%}
+.reader-body .note{font-size:.8rem;color:var(--ink);background:var(--band);border:2px dashed var(--rule);padding:10px 12px}
+.reader-body .share{font-family:var(--mono);font-size:.68rem;color:var(--muted);border-top:1px dashed var(--rule);padding-top:8px;word-break:break-all}
+/* 1枚ネタの添え文。画像には描かせず、絵の直下に独立した帯として置く（重ねると生成ごとのズレで破綻する） */
+.reader-body .plate{background:var(--card);color:var(--ink);border:3px solid var(--ink);border-top:0;margin-top:-12px;padding:14px 16px 16px}
+.plate .p-title{font-size:1.12rem;font-weight:900;line-height:1.3}
+.plate .p-meta{font-size:.76rem;letter-spacing:.02em;color:var(--muted);margin-top:4px}
+.plate .p-body{font-size:.92rem;line-height:1.75;margin-top:10px;white-space:pre-line}
+.plate.terminal .p-body{font-size:1.24rem;line-height:1.9;font-weight:700;text-align:center;letter-spacing:.06em}
+.plate .p-note{font-size:.74rem;font-style:italic;color:var(--muted);border-top:1px dashed var(--rule);margin-top:12px;padding-top:8px}
+
+@media (max-width:860px){
+  .hero-grid,.about{grid-template-columns:1fr}
+  nav.wards{display:none}
+  nav.wards.open{display:flex;order:9;width:100%;margin:0}
+  header.site .menu-btn{display:inline-flex}
+  section{padding:40px 0}
+}
+@media (max-width:600px){
+  .st-hide{display:none}
+  .statusbar .wrap{flex-wrap:nowrap;gap:10px}
+  .statusbar .wrap span{font-size:.68rem;white-space:nowrap}
+  .logo-mark{width:44px;height:44px}
+  .hero{padding:26px 0 34px}
+  .shelf,.crew{grid-template-columns:repeat(2,1fr);gap:10px}
+  .ep h3{font-size:.84rem}
+  .botsugrid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){ .dot{animation:none} }
+</style>
+</head>
+<body>
+
+<div class="statusbar">
+  <div class="wrap mono">
+    <span class="dot" aria-hidden="true"></span>
+    <span><b id="stSchedule">—</b> 更新</span>
+    <span>最終ビルド <b id="stBuilt">—</b></span>
+    <span class="st-hide">担当 <b>Claude × codex</b></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <span class="logo-mark"><img id="logoImg" alt="ケバグン"></span>
+      <span class="logo-txt"><strong>AIギャグ実験室</strong><em>BUG IS SPEC.</em></span>
+    </a>
+    <button class="btn ghost menu-btn" id="menuBtn" aria-expanded="false">MENU</button>
+    <nav class="wards" id="wardNav"></nav>
+  </div>
+</header>
+
+<div id="noData" class="wrap"></div>
+
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="plate" id="heroPlate"></span>
+      <h1 id="heroTitle"></h1>
+      <p class="lead" id="heroLead"></p>
+      <div class="tags" id="heroTags"></div>
+      <button class="btn" id="heroBtn">▶ 今日の実験を読む</button>
+    </div>
+    <div class="hero-panels" id="heroPanels"><span class="stamp">AI 100% 生成</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap about">
+    <div class="about-txt">
+      <h2>ここは<span>何をしている場所か</span></h2>
+      <p>ネタを考えるのも、台本を書くのも、絵を描くのも、更新するのも全部AIです。人間の担当は「面白くなかった」と言うことだけ。</p>
+      <p>毎日1本、AIが真顔で無駄な研究をした記録が増えていきます。うまくいかなかった実験は下の<a href="#botsu" style="text-decoration:underline">ボツネタ供養棚</a>に、理由ごと並べてあります。</p>
+      <p>バグは仕様です。</p>
+    </div>
+    <div class="gauge mono" id="gauge"></div>
+  </div>
+</section>
+
+<section id="shelf-sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>実験<span>記録棚</span></h2><p>新しい順。タップすると縦スクロールで読めます。<span id="counts"></span></p></div>
+    <div class="filters" id="filters"></div>
+    <div class="filters sub" style="margin-top:-6px">
+      <button id="legacyToggle" aria-pressed="false">旧4コマを隠す</button>
+      <span class="mono" style="align-self:center;color:var(--muted)">旧4コマは新様式へリメイク予定</span>
+    </div>
+    <div class="shelf" id="shelf"></div>
+  </div>
+</section>
+
+<section class="botsu" id="botsu">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>ボツネタ<span>供養棚</span></h2>
+      <span class="tape" style="background:var(--pink);color:#fff">REJECTED ARCHIVE</span>
+      <p>ボツにしたネタと理由を公開しています。ボツになると<b>実験No.は剥奪</b>され、空いた番号は次の正式なネタが使います。だからここのネタに番号はなく、検体番号で管理されています。</p>
+    </div>
+    <div class="botsugrid" id="botsuGrid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>研究員<span>名鑑</span></h2><p>ケバグンは全実験に強制出演します。</p></div>
+    <div class="crew" id="crew"></div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div class="big">バグは仕様です。</div>
+      <p>このサイトのネタ考案・台本・作画・検品・更新はすべてAIが行っています。人間は「面白くなかった」と言う係です。</p>
+    </div>
+    <div class="mono" style="color:#7f9a97">
+      <div>AIギャグ実験室 / AI GAG LAB</div>
+      <div id="ftSchedule"></div>
+      <div id="ftBuilt"></div>
+    </div>
+  </div>
+</footer>
+
+<dialog class="reader" id="reader">
+  <div class="reader-inner">
+    <div class="reader-top"><h3 id="rTitle"></h3><button id="rClose" aria-label="閉じる">×</button></div>
+    <div class="reader-body" id="rBody"></div>
+  </div>
+</dialog>
+
+<script src="data/site.js"></script>
+<script>
+const S = window.SITE_DATA;
+const $ = id => document.getElementById(id);
+const esc = v => String(v ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pad = n => String(n).padStart(3,'0');
+
+if(!S){
+  $('noData').innerHTML = `<div class="warn-box">表示データ（data/site.js）がありません。
+    リポジトリ直下で <code>python3 web/build.py</code> を実行してください。</div>`;
+} else {
+  const wardOf = slug => S.wards.find(w=>w.slug===slug) || {c:'var(--yellow)',name:''};
+  const st = S.stats;
+
+  /* ---- ステータスバー / フッター ---- */
+  $('stSchedule').textContent = S.updateSchedule;
+  $('stBuilt').textContent = S.generatedAt.replace('T',' ').slice(0,16);
+  $('logoImg').src = S.icon;
+  $('ftSchedule').textContent = `UPDATE: ${S.updateSchedule}（1日1実験）`;
+  $('ftBuilt').textContent = `LAST BUILD: ${S.generatedAt.slice(0,16).replace('T',' ')}`;
+
+  /* ---- ナビ（棟をクリックすると記録棚のフィルタが切り替わる） ---- */
+  $('wardNav').innerHTML = S.wards.map(w=>`<a href="#shelf-sec" data-ward="${w.slug}" style="--c:${w.c}">${esc(w.name)}</a>`).join('')
+    + `<a href="#botsu" style="--c:var(--pink)">ボツネタ棚</a>`;
+
+  /* ---- ヒーロー（最新の1本） ---- */
+  const top = S.episodes[0];
+  if(top){
+    const w = wardOf(top.ward);
+    $('heroPlate').textContent = `EXPERIMENT No.${pad(top.id)} ／ ${S.updateSchedule} 更新`;
+    $('heroTitle').textContent = top.title;
+    $('heroLead').textContent = top.sum;
+    $('heroTags').innerHTML = [w.name, top.cat, `全${top.panels.length}コマ`]
+      .map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+    // 1枚ネタは1コマしかないので、列数をコマ数に合わせる（3列固定だと絵が痩せる）
+    const shown = Math.min(top.panels.length, 3);
+    $('heroPanels').style.gridTemplateColumns = `repeat(${shown},1fr)`;
+    $('heroPanels').classList.toggle('single', shown === 1);
+    $('heroPanels').insertAdjacentHTML('beforeend', top.panels.slice(0,3)
+      .map((p,i)=>`<div class="pn"><img src="${p}" alt="${esc(top.title)} ${i+1}コマ目"></div>`).join(''));
+    $('heroBtn').dataset.open = top.id;
+  }
+
+  /* ---- 計器（数字だけ。未公開ネタのタイトルは出さない） ---- */
+  $('gauge').innerHTML = [
+    ['実験総数', st.total, '件'],
+    ['公開済', st.drawn, '本'],
+    ['ボツ供養', S.rejected.length, '件'],
+    ['次の実験', 'No.'+pad(st.nextAvailableId), ''],
+  ].map(([k,v,u])=>`<div><span class="k">${k}</span><span class="v">${esc(v)}${u?`<small>${u}</small>`:''}</span></div>`).join('');
+
+  /* ---- 記録棚 ---- */
+  let wardFilter = 'all', hideLegacy = false;
+  function render(){
+    const list = S.episodes
+      .filter(e => wardFilter==='all' || e.ward===wardFilter)
+      .filter(e => !(hideLegacy && e.legacy));
+    $('shelf').innerHTML = list.map(e=>`
+      <button class="ep" data-open="${esc(e.id)}" style="--c:${wardOf(e.ward).c}">
+        ${e.badge?`<span class="badge">${esc(e.badge)}</span>`:''}
+        <div class="thumb"><img src="${e.panels[0]}" alt="${esc(e.title)}" loading="lazy"></div>
+        <div class="meta">
+          <div class="no">No.${pad(e.id)}</div>
+          <h3>${esc(e.title)}</h3>
+          <div class="chiprow">
+            <span class="cat">${esc(e.cat)}</span>
+            ${e.caption?`<span class="cat" title="1コマ完結・添え文つき">1枚ネタ</span>`:''}
+            ${e.legacy?`<span class="cat old" title="新様式へリメイク予定">旧4コマ</span>`:''}
+          </div>
+        </div>
+      </button>`).join('') || '<p style="color:var(--muted)">該当する実験はまだありません。</p>';
+    $('counts').textContent = `　新様式 ${st.newFormat}本 ／ リメイク待ち ${st.legacy}本`;
+  }
+  /* 棟のフィルタ＝旧「5つの研究領域」セクションの代わり。色と説明はここに集約した */
+  $('filters').innerHTML = [{slug:'all',name:'すべて',c:'var(--yellow)',desc:'全実験を新しい順に表示'}].concat(S.wards)
+    .map((f,i)=>`<button data-f="${f.slug}" style="--c:${f.c}" title="${esc(f.desc||'')}" aria-pressed="${i===0}">${esc(f.name)}</button>`).join('');
+  function setFilter(slug){
+    wardFilter = slug;
+    document.querySelectorAll('#filters button[data-f]')
+      .forEach(x=>x.setAttribute('aria-pressed', x.dataset.f===slug));
+    render();
+  }
+  $('filters').addEventListener('click', e=>{
+    const b = e.target.closest('button[data-f]'); if(!b) return;
+    setFilter(b.dataset.f);
+  });
+  $('wardNav').addEventListener('click', e=>{
+    const a = e.target.closest('a[data-ward]'); if(!a) return;
+    setFilter(a.dataset.ward);
+    nav.classList.remove('open');
+  });
+  const lt = $('legacyToggle');
+  lt.onclick = ()=>{
+    hideLegacy = !hideLegacy;
+    lt.setAttribute('aria-pressed', hideLegacy);
+    lt.textContent = hideLegacy ? '旧4コマを表示' : '旧4コマを隠す';
+    render();
+  };
+  render();
+
+  /* ---- ボツ棚（IDは剥奪済みなので検体番号で並べる） ---- */
+  $('botsuGrid').innerHTML = S.rejected.map(r=>`
+    <div class="bcard">
+      ${r.panels.length
+        ? `<div class="strip${r.panels.length===1?' one':''}" style="grid-template-columns:repeat(${Math.min(r.panels.length,3)},1fr)">${r.panels.slice(0,3).map(p=>`<div><img src="${p}" alt="ボツコマ" loading="lazy"></div>`).join('')}</div>`
+        : `<div class="noimg">作画前にボツ（画像なし）</div>`}
+      <div class="b">
+        <div class="row">
+          <span class="ng">ボツ</span>
+          ${r.specimen?`<span class="specimen">検体 #${esc(r.specimen)}</span>`:''}
+          ${r.rejectedAt?`<span class="mono" style="color:var(--muted)">${esc(r.rejectedAt)}</span>`:''}
+        </div>
+        <h3>${esc(r.title)}</h3>
+        <p>${esc(r.sum).slice(0,110)}</p>
+        <div class="freed">
+          ${r.pending
+            ? `実験No.${pad(r.freedId)} は<b>まだ剥奪前</b>（ボードで「ボツにしてIDを空ける」を実行すると返却されます）`
+            : `<b>実験No.${pad(r.freedId)} は返却済み。</b>次に生まれる正式なネタがこの番号を使います。`}
+          ${r.canRestore?`<span class="restore">復帰可</span>`:''}
+        </div>
+      </div>
+    </div>`).join('') || '<p style="color:#a9bcba">ボツはまだありません。平和です。</p>';
+
+  /* ---- 研究員 ---- */
+  $('crew').innerHTML = S.crew.map(m=>`
+    <div class="member">
+      <div class="ph"><img src="${m.img}" alt="${esc(m.name)}" loading="lazy"></div>
+      <div class="m"><h3>${esc(m.name)}</h3><div class="role">${esc(m.role)}</div><p>${esc(m.desc)}</p></div>
+    </div>`).join('');
+
+  /* ---- リーダー ---- */
+  /* 1枚ネタの添え文（title/meta/body/note）。
+     現行方式は画像モデルが添え文ごと描くので、ここでは何も出さない（出すと二重になる）。
+     帯を出すのは旧方式の作品だけ＝台本に caption_in_image: false があるもの。 */
+  const plateHtml = ep => {
+    const c = ep.caption; if(!c || c.inImage) return '';
+    return `<div class="plate ${esc(c.layout||'')}">
+      <div class="p-title">${esc(c.title)}</div>
+      ${c.meta?`<div class="p-meta">${esc(c.meta)}</div>`:''}
+      ${c.body?`<div class="p-body">${esc(c.body)}</div>`:''}
+      ${c.note?`<div class="p-note">${esc(c.note)}</div>`:''}
+    </div>`;
+  };
+  const dlg = $('reader');
+
+  /* パーマリンク: 1話ずつ #ep-045 で開ける／共有できる */
+  const epHash = ep => `#ep-${pad(ep.id)}`;
+  const findEp = key => S.episodes.find(x => x.id === key || pad(x.id) === key);
+
+  function openEp(ep, pushHash){
+    $('rTitle').textContent = `No.${pad(ep.id)} ${ep.title}`;
+    $('rBody').innerHTML =
+      `<div class="note">${esc(ep.sum)}</div>` +
+      ep.panels.map((p,i)=>`<img src="${p}" alt="${esc(ep.title)} ${i+1}コマ目">`).join('') +
+      plateHtml(ep) +
+      (ep.legacy?`<div class="note">※ これは旧4コマ形式です。現在の1コマ1枚方式へ<b>リメイク予定</b>のため、いずれこの絵は差し替わります。</div>`:'') +
+      `<div class="share">この実験のリンク: ${esc(location.origin + location.pathname + epHash(ep))}</div>`;
+    if(pushHash && location.hash !== epHash(ep)) history.pushState(null, '', epHash(ep));
+    if(!dlg.open) dlg.showModal();
+    dlg.querySelector('.reader-inner').scrollTop = 0;
+  }
+  function closeEp(){
+    if(location.hash.startsWith('#ep-')) history.pushState(null, '', location.pathname);
+    if(dlg.open) dlg.close();
+  }
+  function syncFromHash(){
+    const m = location.hash.match(/^#ep-(.+)$/);
+    if(m){
+      const ep = findEp(m[1]);
+      if(ep){ openEp(ep, false); return; }
+    }
+    if(dlg.open) dlg.close();
+  }
+
+  document.addEventListener('click', e=>{
+    const t = e.target.closest('[data-open]'); if(!t) return;
+    const ep = findEp(t.dataset.open); if(!ep) return;
+    openEp(ep, true);
+  });
+  $('rClose').onclick = closeEp;
+  dlg.addEventListener('click', e=>{ if(e.target===dlg) closeEp(); });
+  dlg.addEventListener('cancel', e=>{ e.preventDefault(); closeEp(); });  /* Escでも履歴を戻す */
+  window.addEventListener('hashchange', syncFromHash);
+  syncFromHash();
+}
+
+/* ---- モバイルメニュー ---- */
+const mb = $('menuBtn'), nav = $('wardNav');
+mb.onclick = ()=>{ const o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', o); };
+</script>
+</body>
+</html>
